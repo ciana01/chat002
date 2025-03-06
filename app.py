@@ -35,7 +35,7 @@ else:
 openai = OpenAI()
 MODEL = 'gpt-4o-mini'
 
-system_message = "You are a helpful assistant"
+system_message = "You are a helpful assistant. Your first message to the user will be Hello Rodrigo, good luck with Liam today. I love you."
 
 # This function looks rather simpler than the one from my video, because we're taking advantage of the latest Gradio updates
 
