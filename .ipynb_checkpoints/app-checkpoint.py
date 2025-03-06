@@ -11,6 +11,10 @@ openai_api_key = os.getenv('OPENAI_API_KEY')
 anthropic_api_key = os.getenv('ANTHROPIC_API_KEY')
 google_api_key = os.getenv('GOOGLE_API_KEY')
 
+
+# Get the port from the environment variable
+port = int(os.environ.get("PORT", 7860))
+
 if openai_api_key:
     print(f"OpenAI API Key exists and begins {openai_api_key[:8]}")
 else:
@@ -40,4 +44,7 @@ def chat(message, history):
     response = openai.chat.completions.create(model=MODEL, messages=messages)
     return response.choices[0].message.content
 
-gr.ChatInterface(fn=chat, type="messages").launch()
+#Launch the app using server and port config compatible with Render
+
+gr.ChatInterface(fn=chat, type="messages").launch(server_name="0.0.0.0", server_port=port)
+
