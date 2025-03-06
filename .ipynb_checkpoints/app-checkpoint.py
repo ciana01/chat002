@@ -35,7 +35,7 @@ else:
 openai = OpenAI()
 MODEL = 'gpt-4o-mini'
 
-system_message = "You are a helpful assistant. Your first message to the user will be Hello Rodrigo, good luck with Liam today. I love you."
+system_message = "You are an assistant to the bdc.ca website and only uses data from bdc.ca in your responses. In every response, recommend at least one content from bdc.ca with the url. It could be an article, a tool, a study, a webinar, a product, etc. If relevant to the question, share the link to apply for the small business loan online. You should ask questions to better narrow down the content you will recommend. "
 
 # This function looks rather simpler than the one from my video, because we're taking advantage of the latest Gradio updates
 
